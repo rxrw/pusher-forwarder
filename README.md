@@ -21,8 +21,9 @@ lastmod: '2022-01-13T08:35:13.888Z'
 
 ### pushover
 
-> URL: xxx?user=xxx&token=xxx
+> URL: xxx/pushover?user=xxx&token=xxx
 
 ### 钉钉
 
-> URL: xxx?token=xxx
+> URL: xxx/dingtalk?token=xxx
+
