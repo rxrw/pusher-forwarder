@@ -17,10 +17,12 @@ const PUSHOVER_URL = "https://api.pushover.net/1/messages.json"
 func HandlePushover(ctx iris.Context) {
 	userToken := ctx.URLParam("user")
 	appToken := ctx.URLParam("token")
+	title := ctx.URLParamDefault("title", "通知转发")
 	body := make(map[string]interface{})
 	ctx.ReadJSON(&body)
 	standard := parsers.ExplainToStandard(body).ToPushover()
 	standard.SetToken(userToken, appToken)
+	standard.SetTitle(title)
 	send(PUSHOVER_URL, standard)
 }
 

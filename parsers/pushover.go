@@ -23,3 +23,7 @@ func (d *PushoverEntity) SetToken(user string, token string) {
 	d.Token = token
 	d.User = user
 }
+
+func (d *PushoverEntity) SetTitle(title string) {
+	d.Title = title
+}
