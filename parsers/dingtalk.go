@@ -2,16 +2,16 @@ package parsers
 
 // 根据请求体解析用
 type DingtalkEntity struct {
-	Msgtype string `json:"msgtype"`
-	Text    Text   `json:"text"`
+	Msgtype string       `json:"msgtype"`
+	Text    DingtalkText `json:"text"`
 }
 
-type Text struct {
-	Content string `json:"content"`
-	At      At     `json:"at"`
+type DingtalkText struct {
+	Content string         `json:"content"`
+	At      DingtalkTextAt `json:"at"`
 }
 
-type At struct {
+type DingtalkTextAt struct {
 	AtMobiles []string `json:"atMobiles"`
 	IsAtAll   bool     `json:"isAtAll"`
 }

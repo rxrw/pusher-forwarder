@@ -13,3 +13,12 @@ func (s StandardEntity) ToPushover() PushoverEntity {
 		URL:     s.URL,
 	}
 }
+
+func (s StandardEntity) ToDingtalk() DingtalkEntity {
+	return DingtalkEntity{
+		Msgtype: "text",
+		Text: DingtalkText{
+			Content: s.Content,
+		},
+	}
+}
