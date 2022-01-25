@@ -19,12 +19,9 @@ func HandlePushover(ctx iris.Context) {
 	appToken := ctx.URLParam("token")
 	title := ctx.URLParamDefault("title", "通知转发")
 	body := make(map[string]interface{})
-	fmt.Println(ctx.FormValues())
-	fmt.Println(ctx.GetBody())
 	ctx.ReadJSON(&body)
 	var message []byte
 	message, _ = json.Marshal(body)
-	fmt.Println(string(message))
 	standard := parsers.ExplainToStandard(body).ToPushover()
 	standard.SetToken(userToken, appToken)
 	standard.SetTitle(title)
